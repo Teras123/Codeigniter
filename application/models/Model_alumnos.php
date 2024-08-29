@@ -18,14 +18,14 @@ class Model_alumnos extends CI_Model
 
     function getAlumnos()
     {
-        $sql = "SELECT * FROM alumnos";
+        $sql = "SELECT * FROM alumno";
         $query = $this->db->query($sql);
         return $query->result();
     }
 
     function create($datos)
 	{
-		return $this->db->insert('alumnos', $datos);
+		return $this->db->insert('alumno', $datos);
 	}
 
 }
