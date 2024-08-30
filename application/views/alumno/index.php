@@ -50,13 +50,17 @@
                                 </button>
                             </a>
                             <!-- Delete Button -->
-                            <a href="<?= site_url('AlumnosController/delete/' . $row->alumno) ?>" onclick="return confirm('¿Estás seguro que deseas eliminar este elemento?');">
-                                <button title="Eliminar" class="btn btn-danger btn-sm">
-                                    <i class="fa fa-trash-o"></i> 
-                                    <ion-icon name="trash-outline"></ion-icon>
-                                    Eliminar
-                                </button>
-                            </a>
+                            <a href="#" class="delete-link" data-url="<?= site_url('AlumnosController/delete/' . $row->alumno) ?>">
+    <button title="Eliminar" class="btn btn-danger btn-sm">
+        <i class="fa fa-trash-o"></i> 
+        <ion-icon name="trash-outline"></ion-icon>
+        Eliminar
+    </button>
+</a>
+
+
+
+                            
 						</td>
 					</tr>
 				<?php endforeach; ?>

@@ -64,13 +64,13 @@ class AlumnosController extends CI_Controller
             );
 
             if ($this->Model_alumnos->create($datos)) {
-                $this->session->set_flashdata('eok', 'Registro creado satisfactoriamente');
+                $this->session->set_flashdata('swal', 'insert_success');
             } else {
-                $this->session->set_flashdata('eerror', 'Ocurrió un error al intentar crear el registro');
+                $this->session->set_flashdata('swal', 'insert_error');
             }
             redirect('AlumnosController');
         } else {
-            $this->session->set_flashdata('eerror', 'Error al guardar el registro, contacte al administrador');
+            $this->session->set_flashdata('swal', 'insert_error');
             redirect('AlumnosController/form');
         }
     }
@@ -94,13 +94,13 @@ class AlumnosController extends CI_Controller
             );
 
             if ($this->Model_alumnos->update($alumno, $datos)) {
-                $this->session->set_flashdata('eok', 'Registro actualizado satisfactoriamente');
+                $this->session->set_flashdata('swal', 'update_success');
             } else {
-                $this->session->set_flashdata('eerror', 'Ocurrió un error al intentar actualizar el registro');
+                $this->session->set_flashdata('swal', 'update_error');
             }
             redirect('AlumnosController');
         } else {
-            $this->session->set_flashdata('eerror', 'Error al actualizar el registro, contacte al administrador');
+            $this->session->set_flashdata('swal', 'update_error');
             redirect('AlumnosController/form/' . $alumno);
         }
     }
@@ -113,9 +113,9 @@ class AlumnosController extends CI_Controller
     public function delete($alumno)
     {
         if ($this->Model_alumnos->delete($alumno)) {
-            $this->session->set_flashdata('eok', 'Registro eliminado satisfactoriamente');
+            $this->session->set_flashdata('swal', 'delete_success');
         } else {
-            $this->session->set_flashdata('eerror', 'Ocurrió un error al intentar eliminar el registro');
+            $this->session->set_flashdata('swal', 'delete_error');
         }
         redirect('AlumnosController');
     }
